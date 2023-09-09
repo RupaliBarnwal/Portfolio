@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Website</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="header">
+    <div class="container">
+        <nav>
+            <img src="images/logo1.png" class="logo">
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">Portfolio</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="header-text">
+            <p>Web Developer</p>
+            <h1>Hi, I am <span>Rupali Barnwal</span><br>from India.</h1>
+        </div>
+    </div>
+  </div> 
+  <!--------------about------------- -->
+  <div id="about">
+    <div class="container">
+        <div class="row">
+            <div class="about-col-1">
+                <img src="images/img1.jpg" height="500px">
+            </div>
+            <div class="about-col-2">
+                <h1 class="sub-title" >About Me</h1>
+                <p>Experienced Web Developer with 2+ years of experience in designing and developing user-friendly
+                     and visually appealing websites. Proficient in front-end development technologies such as HTML,
+                      CSS, and JavaScript,Reactjs as well as responsive design principles. Skilled in creating 
+                      intuitive user interfaces and optimizing website performance for seamless navigation. Strong 
+                      knowledge of web standards, cross-browser compatibility, and accessibility guidelines. Experienced
+                       in collaborating with cross-functional teams to deliver high-quality web solutions that meet client
+                        requirements. Seeking challenging opportunities to utilize skills in web development, collaborate
+                         with diverse teams, and drive exceptional user experiences.</p>
+                <div class="tab-titles">
+                    <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
+                    <p class="tab-links" onclick="opentab('experience')">Experience</p>
+                    <p class="tab-links" onclick="opentab('education')">Education</p>
+                </div>
+                <div class="tab-contents active-tab" id="skills">
+                    <ul>
+                        <li><span>Web Design</span><br>Designing Web passages</li>
+                        <li><span>Web Development</span><br>Web App Development</li>
+                    </ul>
+                </div>
+                <div class="tab-contents" id="experience">
+                    <ul>
+                        <li><span>April 2021 - current</span><br>Software Engineer at Businessnext</li>
+                        <li><span>March 2021- May 2021</span><br>Internship at Highradius</li>
+                        <li><span>Dec 2020- Jan 2021</span><br>Internship at Weesync Technology</li>
+                    </ul>
+                </div>
+                <div class="tab-contents" id="education">
+                    <ul>
+                        <li><span>2021</span><br>Btech from KIIT University</li>
+                        </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+  </div>
+  <script>
+    var tablinks=document.getElementsByClassName("tab-links");
+    var tabcontents=document.getElementsByClassName("tab-contents");
+function opentab(tabname){
+    for(tablink of tablinks){
+        tablink.classList.remove("active-link");
+    }
+    for(tabcontent of tabcontents){
+        tabcontent.classList.remove("active-tab");
+    }
+    event.currentTarget.classList.add("active-link");
+    document.getElementById(tabname).classList.add("active-tab");
+}
+  </script>
+</body>
+</html>
