@@ -17,7 +17,7 @@ body{
 #header{
     width:100%;
     height:100vh;
-    background-image: url("Images/bg.png");
+    /* background-image: url("Images/bg.png"); */
      background-size: cover;
     background-position:right;
     background-repeat: no-repeat, repeat;
@@ -33,6 +33,11 @@ nav{
 }
 .logo{
     width: 140px;
+    position:relative;
+    font-size: 25px;
+    color: #fff;
+    text-decoration: none;
+    font-weight:600;
 
 }
 nav ul li{
@@ -57,7 +62,7 @@ nav ul li a:after {
     height: 2px;
     bottom: 0;
     left: 0;
-    background-color: #0087ca;
+    background-color: #ff004f;
     transform-origin: bottom right;
     transition: transform 0.25s ease-out;
   }
@@ -66,7 +71,7 @@ nav ul li a:after {
     transform: scaleX(1);
     transform-origin: bottom left;
   }
-  .header-text{
+  /* .header-text{
     margin-top: 10%;
     font-size:30px;
   }
@@ -76,7 +81,109 @@ nav ul li a:after {
   }
   .header-text h1 span{
     color:rgb(51, 180, 119);
-  }
+  } */
+.home{
+    position:relative;
+    width:100%;
+    justify-content: space-between;
+    height: 100vh;
+    background-color: #232E64;
+    background-size: cover;
+    background-position: center;
+    display:flex;
+    align-items: center;
+    padding: 70px 10%;
+}
+.home-content{
+    max-width:500px;
+}
+.home-content h3{
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 1.2;
+}
+.home-content h1{
+    font-size: 56px;
+    font-weight: 700;
+    margin:-3px 0;
+    line-height: 1.2;
+}
+.home-content p{
+    font-size: 20px;
+    margin: 20px 0 40px;
+}
+.home-img{
+    width:410px;
+    height:410px;
+}
+.home-img .glowing-circle{
+    position: relative;
+    width:100%;
+    height:100%;
+    background: yellowgreen;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.home-img .glowing-circle:after{
+    content:'';
+    position: absolute;
+    width:380px;
+    height:380px;
+    background: #232E64;
+    border-radius: 50%;
+}
+.btn1{
+    display:inline-flex;
+    justify-content: center;
+    align-items: center;
+    width:180px;
+    height:48px;
+    /* background:yellowgreen; */
+    background: linear-gradient(45deg,#ff004f, #3cf,#ff004f);
+    border-radius: 40px;
+    font-size: 19px;
+    color:#fff;
+    text-decoration: none;
+    font-weight: 600;
+    letter-spacing: 1px;
+    z-index: 1;
+}
+.btn1:before{
+    content:'';
+    position: absolute;
+    top:0;
+    left:0;
+    inset:0;
+    background: linear-gradient(45deg,#ff004f, #3cf,#ff004f);
+    z-index: -1;
+    border-radius: 40px;
+    background-size: 200%;
+    background-position: 0 0;
+    filter:blur(5px);
+    transition:.5s ease;
+}
+.btn1:hover:before{
+    background-position:100% 0;
+}
+.btn1:after{
+    content:'';
+    position: absolute;
+    top:0;
+    left:0;
+    inset:0;
+    background: linear-gradient(45deg,#ff004f, #3cf,
+    #ff004f);
+    background-position: 0 0;
+    background-size: 200%;
+    z-index: -1;
+    border-radius: 40px;
+    transition:.5s ease;
+}
+.btn1:hover:after{
+    background-position:100% 0;
+}
   /*----about-----*/
 #about{
     padding:80px 0;
@@ -276,14 +383,31 @@ nav ul li a:after {
 }
 .social-icons a{
     text-decoration: none;
-    font-size: 30px;
-    color: #0087ca;
-    display: inline-block;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(45deg, #ff004f,#3cf,#ff004f);
+    display: inline-flex;
+    border-radius: 50%;
+    width:35px;
+    height:35px;
+    font-size: 20px;
+    color: #fff;
+    text-decoration: none;
     margin-right: 15px;
     transition: transform 0.5s;
+    z-index:1;
+}
+.social-icons a:after{
+    content:'';
+    position: absolute;
+    width:100%;
+    height:100%;
+    background: #2A428C;
+    border-radius: 50%;
+    transform: scale(.88);
+    z-index: -1;
 }
 .social-icons a:hover{
-    color:#b54769;
     transform: translateY(-5px);
 }
 .btn.btn2{
@@ -316,7 +440,7 @@ form .btn2{
     padding:25px 0;
     background:#232E64;
     font-weight: 300;
-    margin-top: 20px;
+    margin-top: 100px;
 }
 /* ------responsive ------- */
 nav .fa-solid{
@@ -327,7 +451,7 @@ nav .fa-solid{
         background:#232E64;
     }
     #header{
-        background-image: url("Images/img3.png");
+        /* background-image: url("Images/img3.png"); */
          /* background: #2A428C;  */
         background-size: 350px 400px;
     }
@@ -388,12 +512,20 @@ nav .fa-solid{
     form input, form textarea{
         background: #2A428C; 
     }
+    .home-img{
+        display: none;
+    }
+    .social-icons a:after{
+        background: #232E64;
+    }
 }
 #msg{
 color:#ff004f;
 margin-top: -40px;
 display: block;
 }
+
+
 
 
 
