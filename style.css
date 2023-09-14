@@ -30,6 +30,7 @@ nav{
     align-items: center;
     justify-content: space-between;
     flex-wrap: wrap;
+    
 }
 .logo{
     width: 140px;
@@ -38,10 +39,14 @@ nav{
     color: #fff;
     text-decoration: none;
     font-weight:600;
-    background: linear-gradient(45deg,#ff004f, #3cf,#ff004f);
+    background: linear-gradient(45deg,hwb(73 0% 0%), cyan,#ff004f);
     -webkit-text-fill-color: transparent;
     -webkit-background-clip: text;
+    pointer-events: none;
+    opacity: 0;
+    animation: slideTop 1s ease forwards;
 }
+
 
 nav ul li{
     display:inline-block;
@@ -49,11 +54,20 @@ nav ul li{
     margin: 10px, 20px;
 }
  nav ul li a{
+    display: inline-block;
     color:#fff;
     text-decoration: none;
     font-size: 18px;
-    position:relative;
+    /* position:relative; */
     margin:20px;
+    opacity: 0;
+    animation: slideTop .5s ease forwards;
+    animation-delay: calc(.2s * var(--i));
+}
+nav ul li a.active,nav ul li a:hover{
+    background: linear-gradient(45deg,#ff004f, #3cf,#ff004f);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
 }
 
   
@@ -114,20 +128,32 @@ nav ul li a:after {
     font-size: 32px;
     font-weight: 700;
     line-height: 1.2;
+    opacity: 0;
+    animation: slideRight .3s ease forwards;
+    animation-delay: .7s;
 }
 .home-content h1{
     font-size: 56px;
     font-weight: 700;
     margin:-3px 0;
     line-height: 1.2;
+    opacity: 0;
+    animation: slideLeft .3s ease forwards;
+    animation-delay: .7s;
 }
 .home-content p{
     font-size: 20px;
     margin: 20px 0 40px;
+    opacity: 0;
+    animation: slideLeft .3s ease forwards;
+    animation-delay: 1.3s;
 }
 .home-img{
     width:410px;
     height:410px;
+    opacity: 0;
+    animation: zoomIn .1s ease forwards, floatImage 4s ease-in-out infinite;
+    animation-delay: 2.1s , 3.1s;
 }
 .home-img .glowing-circle{
     position: relative;
@@ -152,6 +178,7 @@ nav ul li a:after {
     height:100%;
     background: linear-gradient(45deg,#ff004f, #3cf,#ff004f);
     border-radius: 50%;
+    animation: circleRotate 5s linear infinite;
 }
 .glowing-circle span:nth-child(1){
     filter: blur(20px);
@@ -188,6 +215,9 @@ nav ul li a:after {
     font-weight: 600;
     letter-spacing: 1px;
     z-index: 1;
+    opacity: 0;
+    animation: slideTop .3s ease forwards;
+    animation-delay: 1.8s;
 }
 .btn1:before{
     content:'';
@@ -227,6 +257,7 @@ nav ul li a:after {
 #about{
     padding:80px 0;
     color: #ababab;
+    margin-top: 100px;
 }
 .row{
     display:flex;
@@ -237,7 +268,8 @@ nav ul li a:after {
     flex-basis:35%;
 }
 .about-col-1 img{
-    width:100%;
+    width:300px;
+    height: 500px;
     border-radius:15px;
 }
 .about-col-2{
@@ -292,19 +324,14 @@ nav ul li a:after {
     padding:30px 0;
 }
 .services-list{
+    /* position: relative; */
     display:grid;
     grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
     grid-gap:40px;
     margin-top: 50px;
 }
-.services-list div{
-    background: #354f9b;
-    padding:40px;
-    font-size: 13px;
-    font-weight: 300;
-    border-radius: 10px;
-    transition: background 0.5s, transform 0.5s;
-}
+
+
 .services-list div i{
     font-size: 50px;
     margin-bottom: 30px;
@@ -320,9 +347,22 @@ nav ul li a:after {
     font-size: 12px;
     margin-top: 20px;
     display:inline-block;
+    background: linear-gradient(to bottom right,
+    #3cf, #ff004f);
+    border-radius: 40px;
+    padding: 12px 28px;
+    opacity:0;
+    animation: slideTop 1s ease forwards;
+    animation-delay: .5s;
+    box-shadow: 0 0 5px #3cf,
+    0 0 25px #3cf;
+}
+.services-list div a:hover{
+    box-shadow:  0 0 5px #3cf,
+    0 0 25px #3cf;
 }
 .services-list div:hover{
-    background: #606ECD;
+    /* background: #606ECD; */
     transform:translateY(-10px) ;
 }
 /* ------portfolio----- */
@@ -398,7 +438,8 @@ nav ul li a:after {
     transition: background 0.5s;
 }
 .btn:hover{
-    background: #606ECD;
+    background: linear-gradient(to bottom right,
+    #3cf, #ff004f);;
 }
 /* -----contact------ */
 .contact-left{
@@ -420,39 +461,8 @@ nav ul li a:after {
 .social-icons{
     margin-top: 30px;
 }
-.social-icons a{
-    text-decoration: none;
-    justify-content: center;
-    align-items: center;
-    background: linear-gradient(45deg, #ff004f,#3cf,#ff004f);
-    display: inline-flex;
-    border-radius: 50%;
-    width:35px;
-    height:35px;
-    font-size: 20px;
-    color: #fff;
-    text-decoration: none;
-    margin-right: 15px;
-    transition: transform 0.5s;
-    z-index:1;
-}
-.social-icons a:after{
-    content:'';
-    position: absolute;
-    width:100%;
-    height:100%;
-    background: #2A428C;
-    border-radius: 50%;
-    transform: scale(.88);
-    z-index: -1;
-}
-.social-icons a:hover{
-    transform: translateY(-5px);
-}
-.btn.btn2{
-    display:inline-block;
-    background: #0087ca;
-}
+
+
 .contact-right form{
     width:100%;
 }
@@ -481,90 +491,6 @@ form .btn2{
     font-weight: 300;
     margin-top: 100px;
 }
-/* ------responsive ------- */
-nav .fa-solid{
-    display:none;
-}
-@media only screen and (max-width:500px){
-    body{
-        background:#232E64;
-    }
-    #header{
-        /* background-image: url("Images/img3.png"); */
-         /* background: #2A428C;  */
-        background-size: 350px 400px;
-    }
-    .header-text {
-        margin-top:120%;
-        font-size: 16px;
-    }
-    .header-text h1{
-        font-size: 30px;
-    }
-    nav .fa-solid{
-        display:block;
-        font-size: 25px;
-    }
-    nav ul{
-        background: #606ECD;
-        position: fixed;
-        top:0;
-        right:-200px;
-        width:200px;
-        height:100vh;
-        padding-top: 20px;
-        z-index:2 ;
-        transition: right 0.5s;
-    }
-    nav ul li{
-        display:block;
-        margin:25px;
-    }
-    nav ul .fa-solid{
-        position:absolute;
-        top:25px;
-        left:25;
-        cursor:pointer;
-    }
-    .sub-title{
-        font-size: 40px;
-    }
-    .about-col-1 , .about-col-2{
-        flex-basis: 100%;
-    }
-    .about-col-1{
-        margin-bottom: 30px;
-    }
-    .about-col-2{
-        font-size: 14px;
-    }
-    .tab-links{
-        font-size:16px ;
-        margin-right: 20px;
-    }
-    .contact-left,.contact-right{
-        flex-basis: 100%;
-    }
-    .copyright{
-        font-size: 14px;
-    }
-    form input, form textarea{
-        background: #2A428C; 
-    }
-    .home-img{
-        display: none;
-    }
-    .social-icons a:after{
-        background: #232E64;
-    }
-}
-#msg{
-color:#ff004f;
-margin-top: -40px;
-display: block;
-}
-
-
 
 
 

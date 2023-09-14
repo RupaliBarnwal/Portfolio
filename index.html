@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio Website</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style1.css">
     <script src="https://kit.fontawesome.com/9f4020776b.js" crossorigin="anonymous"></script>
 </head>
 <body>
@@ -13,11 +14,11 @@
         <nav>
             <a href="#" class="logo">Rupali</a>
             <ul id="SideMenu">
-                <li><a href="#header" onclick="closeMenu()">Home</a></li>
-                <li><a href="#about" onclick="closeMenu()">About</a></li>
-                <li><a href="#services" onclick="closeMenu()">Services</a></li>
-                <li><a href="#portfolio" onclick="closeMenu()">Portfolio</a></li>
-                <li><a href="#contact" onclick="closeMenu()">Contact</a></li>
+                <li><a href="#header" class="active" onclick="closeMenu()" style="--i:1;">Home</a></li>
+                <li><a href="#about" onclick="closeMenu()" style="--i:2;">About</a></li>
+                <li><a href="#services" onclick="closeMenu()" style="--i:3;">Services</a></li>
+                <li><a href="#portfolio" onclick="closeMenu()" style="--i:4;">Portfolio</a></li>
+                <li><a href="#contact"  onclick="closeMenu()" style="--i:5;">Contact</a></li>
                 <i class="fa-solid fa-xmark" onclick="closeMenu()"></i>
             </ul>
             <i class="fa-solid fa-bars" onclick="openMenu()"></i>
@@ -103,21 +104,21 @@
                 <h2>Web Design</h2>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis, magnam perspiciatis libero quis repudiandae, maxime qui obcaecati porro, delectus optio amet natus molestias dolore perferendis iste 
                     nesciunt ipsa minus. Adipisci!</p>
-                    <a href="#">Learn More</a>
+                    <a href="#" class="read">Learn More</a>
                </div> 
                <div>
                 <i class="fa-solid fa-crop"></i>
                 <h2>UI/UX Design</h2>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis, magnam perspiciatis libero quis repudiandae, maxime qui obcaecati porro, delectus optio amet natus molestias dolore perferendis iste 
                     nesciunt ipsa minus. Adipisci!</p>
-                    <a href="#">Learn More</a>
+                    <a href="#" class="read">Learn More</a>
                </div> 
                <div>
                 <i class="fa-solid fa-laptop-code"></i>
                 <h2>Web Development</h2>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis, magnam perspiciatis libero quis repudiandae, maxime qui obcaecati porro, delectus optio amet natus molestias dolore perferendis iste 
                     nesciunt ipsa minus. Adipisci!</p>
-                    <a href="#">Learn More</a>
+                    <a href="#" class="read">Learn More</a>
                </div> 
             </div>
         </div>
@@ -167,10 +168,10 @@
                     <p><i class="fa-solid fa-envelope"></i>rupalibarnwal1997@gmail.com</p>
                     <p><i class="fa-solid fa-mobile-screen"></i>9113475064</p>
                     <div class="social-icons">
-                        <a href="#"><i class="fa-brands fa-facebook"></i></a>
-                        <a href="#"><i class="fa-brands fa-linkedin"></i></a>
-                        <a href="#"><i class="fa-brands fa-github"></i></a>
-                        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="https://www.facebook.com/rupali.barnwal.503"><i class="fa-brands fa-facebook"></i></a>
+                        <a href="https://www.linkedin.com/in/rupalibarnwal/"><i class="fa-brands fa-linkedin"></i></a>
+                        <a href="https://github.com/RupaliBarnwal"><i class="fa-brands fa-github"></i></a>
+                        <a href="https://www.instagram.com/"><i class="fa-brands fa-instagram"></i></a>
                     </div>
                       <a href="images/Rupali_Barnwal_Resume.pdf" download class="btn btn2"><i class="fa-solid fa-circle-down"></i>Download CV</a>
                 </div>
