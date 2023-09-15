@@ -388,7 +388,7 @@ section{
     font-size: 23px;
 }
 .technical-bars .bar{
-    margin-top: 0;
+    margin:10px 0;
 }
 .technical-bars .bar:first-child{
     margin-top: 0;
@@ -435,6 +435,9 @@ section{
 }
 .progress-line.react span{
     width:75%;
+}
+.progress-line.mysql span{
+    width:85%;
 }
 .progress-line span:after{
     position: absolute;

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Website</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style1.css">
+    <script src="https://kit.fontawesome.com/9f4020776b.js" crossorigin="anonymous"></script>
+    <style>
+        div{
+            display: block;
+        }
+        .container2{
+            width:100%;
+            padding-right: 15px;
+            padding-left: 15px;
+            margin-right: auto;
+            margin-left: auto;
+        }
+        .row1 {
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px;
+}
+.col1{
+position: relative;
+    width: 100%;
+    min-height: 1px;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-left: 15%;
+    margin-right: 15%;
+    margin-top: 28px;
+    margin-bottom: 17px;
+}
+.imgclass {
+    width: 100% !important;
+}
+img {
+    vertical-align: middle;
+    border-style: none;
+    overflow-clip-margin: content-box;
+    overflow: clip;
+    overflow-x: auto;
+    overflow-y: auto ;
+}
+
+
+    </style>
+</head>
+<body>
+
+<div id="header1">
+    <div class="container">
+        <nav>
+            <a href="#" class="logo">Rupali</a>
+            <ul id="SideMenu">
+                <li><a href="#header" class="active" onclick="closeMenu()" style="--i:1;">Home</a></li>
+                <li><a href="#about" onclick="closeMenu()" style="--i:2;">About</a></li>
+                <li><a href="#services" onclick="closeMenu()" style="--i:3;">Services</a></li>
+                <li><a href="#portfolio" onclick="closeMenu()" style="--i:4;">Portfolio</a></li>
+                <li><a href="#contact"  onclick="closeMenu()" style="--i:5;">Contact</a></li>
+                <i class="fa-solid fa-xmark" onclick="closeMenu()"></i>
+            </ul>
+            <i class="fa-solid fa-bars" onclick="openMenu()"></i>
+        </nav>
+        
+    </div>
+  </div> 
+<div class="main">
+    <section class ="imagesection">
+        <div class="container2 border-top">
+            <div class="row1">
+                <div class="col1">
+                    <img src="Images/cv.JPG" class="imgclass" style="box-shadow: 0px 0px 20px #3cf">
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+<a href="images/Rupali_Barnwal_Resume.pdf" download class="btn"><i class="fa-solid fa-circle-down"></i>Download CV</a>
+                </div>
+
+    <div class="copyright">
+        <p>Copyright © Rupali Barnwal</p>
+    </div>
+  </div>
+</body>
+</html>
+
