@@ -68,26 +68,26 @@
                         requirements. Seeking challenging opportunities to utilize skills in web development, collaborate
                          with diverse teams, and drive exceptional user experiences.</p>
                 <div class="tab-titles">
-                    <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
-                    <p class="tab-links" onclick="opentab('experience')">Experience</p>
+                    <!-- <p class="tab-links active-link" onclick="opentab('skills')">Skills</p> -->
+                    <p class="tab-links active-link" onclick="opentab('experience')">Experience</p>
                     <p class="tab-links" onclick="opentab('education')">Education</p>
                 </div>
-                <div class="tab-contents active-tab" id="skills">
+                <!-- <div class="tab-contents active-tab" id="skills">
                     <ul>
                         <li><span>Web Design</span><br>Designing Web passages</li>
                         <li><span>Web Development</span><br>Web App Development</li>
                     </ul>
-                </div>
-                <div class="tab-contents" id="experience">
+                </div> -->
+                <div class="tab-contents active-tab" id="experience">
                     <ul>
-                        <li><span>April 2021 - current</span><br>Software Engineer at Businessnext</li>
+                        <li><span>April 2021 - Aug 2023</span><br>Software Engineer at Businessnext</li>
                         <li><span>March 2021- May 2021</span><br>Internship at Highradius</li>
                         <li><span>Dec 2020- Jan 2021</span><br>Internship at Weesync Technology</li>
                     </ul>
                 </div>
                 <div class="tab-contents" id="education">
                     <ul>
-                        <li><span>2021</span><br>Btech from KIIT University</li>
+                        <li><span>July 2017 - June 2021</span><br>Btech from KIIT University</li>
                         </ul>
                 </div>
             </div>
@@ -293,9 +293,9 @@
                 </div>
                 <div class="contact-right">
                     <form name="submit-to-google-sheet">
-                        <input type="text" name="Name" placeholder="Your Name" required>
-                        <input type="email" name="Email" placeholder="Your Email" required>
-                        <textarea name="Message" rows="6" placeholder="Your Message"></textarea>
+                        <input type="text" name="name" placeholder="Your Name" required>
+                        <input type="email" name="email" placeholder="Your Email" required>
+                        <textarea name="message" rows="6" placeholder="Your Message"></textarea>
                         <button type="submit" class="btn btn2">Submit</button>
                     </form>
                     <span id="msg"></span>
@@ -331,7 +331,8 @@ function opentab(tabname){
         
     }
   </script>
-  <script>
+  
+  <!-- <script>
     const scriptURL ="https://script.google.com/macros/s/AKfycbyfjI20nq4-EWrRshLQaejHeKAqmfvsrEhe3peWg9FZWIVKHJcGHd6iwxSVgOGN1KHJMQ/exec"
     const form = document.forms['submit-to-google-sheet']
   
@@ -355,6 +356,30 @@ function opentab(tabname){
         })
 
         // console.error('Error!', error.message))
+    })
+  </script> -->
+  
+  <script>
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbzkYgg_0zxw8ojUF4jmjctDh6wpScafSZfgj3ddovTAywloq3zMXoTwWzVhfJN7S3os_g/exec'
+    const form = document.forms['submit-to-google-sheet']
+  
+    form.addEventListener('submit', e => {
+      e.preventDefault()
+      fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+        .then(response => {
+            msg.innerHTML="Message sent successfully"
+            setTimeout(function(){
+                msg.innerHTML=""
+            },5000)
+            form.reset()
+        })
+        .catch(error => {
+            msg.innerHTML="Message not sent Please Try Again"
+            setTimeout(function(){
+                msg.innerHTML=""
+            },5000)
+            form.reset()
+        })
     })
   </script>
 </body>
