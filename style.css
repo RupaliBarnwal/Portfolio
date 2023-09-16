@@ -463,6 +463,9 @@ section{
 .progress-line.react span:after{
     content:"75%";
 }
+.progress-line.mysql span:after{
+    content:"85%";
+}
 .progress-line span:before{
     content:'';
     position: absolute;
