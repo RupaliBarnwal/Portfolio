@@ -451,7 +451,7 @@ section{
     animation:showText .5s 1.5s linear forwards;
     opacity:0;
 }
-.progress-line.html span:after{
+/* .progress-line.html span:after{
     content:"90%";
 }
 .progress-line.css span:after{
@@ -465,7 +465,7 @@ section{
 }
 .progress-line.mysql span:after{
     content:"85%";
-}
+} */
 .progress-line span:before{
     content:'';
     position: absolute;
